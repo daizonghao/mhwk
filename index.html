@@ -48,7 +48,7 @@
     // 30 秒兜底,无论是否成功都隐藏 loading 文字
     setTimeout(function () {
       loading.classList.add('hidden');
-    }, 30000);
+    }, 3000);
 
     // 关键: 阻止父页面被 ifram 内容通过 window.open 等跳转
     // (用 sandbox 也行, 但要 allow-same-origin 才不会破坏登录态)
