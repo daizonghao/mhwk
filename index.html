@@ -2,60 +2,17 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>选号</title>
+  <meta http-equiv="refresh" content="0;url=https://m.mhwk8.com/">
+  <title>五开精选 - 跳转中</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { width: 100%; height: 100%; overflow: hidden; }
-    body { background: #fffdf5; }
-    #app {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
-    }
-    #loading {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #8a7a6a;
-      font-family: -apple-system, sans-serif;
-      font-size: 14px;
-      z-index: 1;
-    }
-    #loading.hidden { display: none; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+           text-align: center; padding-top: 40vh; color: #8a7a6a; background: #fffdf5; }
+    a { color: #8B1A1A; text-decoration: none; }
+    a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-  <div id="loading">五开选号站 加载中...</div>
-  <iframe
-    id="app"
-    src="https://m.mhwk8.com/listings?view=index"
-    allow="fullscreen; clipboard-read; clipboard-write"
-    allowfullscreen
-    referrerpolicy="no-referrer"
-  ></iframe>
-  <script>
-    // iframe 加载完就隐藏 loading
-    var iframe = document.getElementById('app');
-    var loading = document.getElementById('loading');
-    iframe.addEventListener('load', function () {
-      loading.classList.add('hidden');
-    });
-    // 30 秒兜底,无论是否成功都隐藏 loading 文字
-    setTimeout(function () {
-      loading.classList.add('hidden');
-    }, 3000);
-
-    // 关键: 阻止父页面被 ifram 内容通过 window.open 等跳转
-    // (用 sandbox 也行, 但要 allow-same-origin 才不会破坏登录态)
-    window.addEventListener('beforeunload', function (e) {
-      // 如果 iframe 想通过 top.location 跳转, 这里可以拦截
-      // 但通常不需要, 浏览器默认禁止跨域 iframe 改 top.location
-    });
-  </script>
+  <p>正在跳转到 <a href="https://m.mhwk8.com/">m.mhwk8.com</a> ...</p>
+  <script>window.location.replace('https://m.mhwk8.com/');</script>
 </body>
 </html>
